@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Team Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="display: block;">
+
+<div class="auth-container">
+    <h2>Sign Up</h2>
+    <form id="signup-form">
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" required minlength="3">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" required minlength="6">
+        </div>
+        <div class="form-group">
+            <label for="role">Role</label>
+            <select id="role" required>
+                <option value="MEMBER">Member</option>
+                <option value="ADMIN">Admin</option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Sign Up</button>
+    </form>
+    <div id="auth-msg"></div>
+    <div class="auth-links">
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/auth.js"></script>
+</body>
+</html>

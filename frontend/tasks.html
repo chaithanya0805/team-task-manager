@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - Team Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Task Manager</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="projects.html">Projects</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="users.html" id="nav-users">Users</a>
+</div>
+
+<div class="main-content">
+    <div class="topbar">
+        <div>
+            Welcome, <strong id="user-name">User</strong> <span id="user-role"></span>
+        </div>
+        <button id="logout-btn" class="btn-small">Logout</button>
+    </div>
+
+    <div class="content">
+        <h2>Tasks</h2>
+        <br>
+        
+        <div id="admin-task-controls" class="form-panel" style="display: none;">
+            <h3>Assign New Task</h3>
+            <form id="create-task-form" style="display: flex; gap: 10px; align-items: center; margin-top: 10px; flex-wrap: wrap;">
+                <input type="text" id="task-title" placeholder="Task Title" required>
+                <input type="text" id="task-desc" placeholder="Description">
+                <input type="date" id="due-date">
+                <select id="task-priority">
+                    <option value="LOW">Low</option>
+                    <option value="MEDIUM" selected>Medium</option>
+                    <option value="HIGH">High</option>
+                </select>
+                <select id="task-project" required><option value="">Select Project</option></select>
+                <select id="task-user" required><option value="">Assign To</option></select>
+                <button type="submit" class="btn-small btn-primary">Create Task</button>
+            </form>
+            <div id="task-msg"></div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Project</th>
+                    <th>Assigned To</th>
+                    <th>Due Date</th>
+                    <th>Priority</th>
+                    <th>Status</th>
+                    <th>Update Status</th>
+                </tr>
+            </thead>
+            <tbody id="tasks-table-body">
+                <tr><td colspan="9">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/tasks.js"></script>
+</body>
+</html>

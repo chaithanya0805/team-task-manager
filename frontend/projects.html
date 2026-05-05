@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Team Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Task Manager</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="projects.html">Projects</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="users.html" id="nav-users">Users</a>
+</div>
+
+<div class="main-content">
+    <div class="topbar">
+        <div>
+            Welcome, <strong id="user-name">User</strong> <span id="user-role"></span>
+        </div>
+        <button id="logout-btn" class="btn-small">Logout</button>
+    </div>
+
+    <div class="content">
+        <h2>Projects</h2>
+        <br>
+        
+        <div id="admin-project-controls" class="form-panel" style="display: none;">
+            <h3>Create New Project</h3>
+            <form id="create-project-form" style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                <input type="text" id="project-name" placeholder="Project Name" required>
+                <input type="text" id="project-desc" placeholder="Description">
+                <input type="date" id="start-date">
+                <input type="date" id="end-date">
+                <button type="submit" class="btn-small btn-primary">Create</button>
+            </form>
+            <div id="project-msg"></div>
+
+            <hr style="margin: 20px 0;">
+
+            <h3>Add Member to Project</h3>
+            <form id="add-member-form" style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                <select id="select-project" required><option value="">Select Project</option></select>
+                <select id="select-user" required><option value="">Select User</option></select>
+                <button type="submit" class="btn-small btn-primary">Add Member</button>
+            </form>
+            <div id="member-msg"></div>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Status</th>
+                    <th id="th-actions" style="display: none;">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="projects-table-body">
+                <tr><td colspan="7">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/projects.js"></script>
+</body>
+</html>

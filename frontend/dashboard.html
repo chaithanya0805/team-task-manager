@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Team Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Task Manager</h2>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="projects.html">Projects</a>
+    <a href="tasks.html">Tasks</a>
+    <a href="users.html" id="nav-users">Users</a>
+</div>
+
+<div class="main-content">
+    <div class="topbar">
+        <div>
+            Welcome, <strong id="user-name">User</strong> <span id="user-role"></span>
+        </div>
+        <button id="logout-btn" class="btn-small">Logout</button>
+    </div>
+
+    <div class="content">
+        <h2>Dashboard Overview</h2>
+        <br>
+        <div class="card-container" id="stats-container">
+            <!-- Stats will be populated here -->
+            <div class="card">
+                <h3>Loading...</h3>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
